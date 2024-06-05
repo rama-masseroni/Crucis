@@ -11,7 +11,7 @@ export default FetchApp = (props) => {
 
   function onConfirm(item) {
     console.log(item.estado);
-    fetch('http://192.168.0.161:1234/tpo/confirmarAssist', {
+    fetch('http://192.168.0.16:8080/tpo/confirmarAssist', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -28,7 +28,7 @@ export default FetchApp = (props) => {
 
 
   function onCancel(item) {
-    fetch('http://192.168.0.161:1234/tpo/cancelarTurno', {
+    fetch('http://192.168.0.16:8080/tpo/cancelarTurno', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -47,7 +47,7 @@ export default FetchApp = (props) => {
 
   useEffect(() => {
 
-    fetch('http://192.168.0.161:1234/tpo/misTurnos')
+    fetch('http://192.168.0.16:8080/tpo/misTurnos')
       .then((response) => response.json())
       .then(data => {
         setDataTurno(data);

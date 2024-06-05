@@ -108,7 +108,7 @@ function IngresarTurno({ route, navigation }) {
     var index = 0;
 
     // function getMedicos() {
-    //     fetch('http://192.168.0.161:1234/tpo/getMedicos', {
+    //     fetch('http://192.168.0.16:8080/tpo/getMedicos', {
     //         method: 'POST', // or 'PUT'
     //         headers: {
     //             'Content-Type': 'application/x-www-form-urlencoded',
@@ -125,14 +125,14 @@ function IngresarTurno({ route, navigation }) {
 
 
     useEffect(() => {
-        fetch('http://192.168.0.161:1234/tpo/getEspecialidades')
+        fetch('http://192.168.0.16:8080/tpo/getEspecialidades')
             .then((response) => response.json())
             .then((json) => setDataEsp(json))
             .then(() => setSelectedEsp(''))
             .catch((error) => console.error(error))
         // .finally(() => setSelectedEsp(''));
         
-        fetch('http://192.168.0.161:1234/tpo/getMedicos')
+        fetch('http://192.168.0.16:8080/tpo/getMedicos')
             .then((response) => response.json())
             .then((json) => setDataMed(json))
             .then(() => setSelectedMed(''))
@@ -379,7 +379,7 @@ function ColaDeEspera({ route, navigation }) {
     const [count, setCount] = useState('');
     useEffect(() => {
 
-        fetch('http://192.168.0.161:1234/tpo/getPacientesEsperando', {
+        fetch('http://192.168.0.16:8080/tpo/getPacientesEsperando', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -393,7 +393,7 @@ function ColaDeEspera({ route, navigation }) {
     }, []);
 
     function confirmWait() {
-        fetch('http://192.168.0.161:1234/tpo/aColaDeEsperaGenerico', {
+        fetch('http://192.168.0.16:8080/tpo/aColaDeEsperaGenerico', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

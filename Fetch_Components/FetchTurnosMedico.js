@@ -10,7 +10,7 @@ export default FetchTurnosMedico = (props) => {
 
 
   function onCancel(item) {
-    fetch('http://192.168.0.161:1234/tpo/medicoEliminaTurno', {
+    fetch('http://192.168.0.16:8080/tpo/medicoEliminaTurno', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -39,7 +39,7 @@ export default FetchTurnosMedico = (props) => {
 
   useEffect(() => {
 
-    fetch('http://192.168.0.161:1234/tpo/misTurnos')
+    fetch('http://192.168.0.16:8080/tpo/misTurnos')
       .then((response) => response.json())
       .then(data => {
         setDataTurno(data);

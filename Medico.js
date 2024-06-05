@@ -200,7 +200,7 @@ function CrearUnTurno({ route, navigation }) {
 
     useEffect(() => {
 
-        fetch('http://192.168.0.161:1234/tpo/getEspByMed')
+        fetch('http://192.168.0.16:8080/tpo/getEspByMed')
             .then((response) => response.json())
             .then((data) => setList(data))
             .catch((error) => console.error(error));
@@ -215,7 +215,7 @@ function CrearUnTurno({ route, navigation }) {
 
     function uploadTurno() {
         console.log(route.params.dia + ' ' + moment(hora).format("HH:mm") + ' ' + selectedEsp + ' ' + route.params.idM);
-        fetch('http://192.168.0.161:1234/tpo/uploadTurno', {
+        fetch('http://192.168.0.16:8080/tpo/uploadTurno', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -368,7 +368,7 @@ function Multiples({ route, navigation }) {
 
     useEffect(() => {
 
-        fetch('http://192.168.0.161:1234/tpo/getEspByMed')
+        fetch('http://192.168.0.16:8080/tpo/getEspByMed')
             .then((response) => response.json())
             .then((data) => setList(data))
             .catch((error) => console.error(error));
@@ -383,7 +383,7 @@ function Multiples({ route, navigation }) {
 
     function uploadMultiples() {
         console.log(grupoDias.toString + ' ' + moment(hora).format("HH:mm") + ' ' + selectedEsp);
-        fetch('http://192.168.0.161:1234/tpo/uploadMultiples', {
+        fetch('http://192.168.0.16:8080/tpo/uploadMultiples', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -567,7 +567,7 @@ const styles = StyleSheet.create({
 export default function Medico() {
 
     return (
-        <StackMedico.Navigator headerShown={false}>
+        <StackMedico.Navigator headerMode={'none'}>
             <StackMedico.Screen
                 name="Principal"
                 component={Principal}
